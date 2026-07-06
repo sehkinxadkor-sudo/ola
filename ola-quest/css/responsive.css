@@ -18,6 +18,20 @@
     background-position: 58% center;
   }
 
+  .hero__vine {
+    width: min(420px, 52vw);
+  }
+
+  .hero__vine--left {
+    left: -250px;
+    bottom: -52px;
+  }
+
+  .hero__vine--right {
+    right: -184px;
+    top: 120px;
+  }
+
   .steps,
   .stats-grid,
   .finish-stats {
@@ -82,6 +96,42 @@
   .hero {
     min-height: 100vh;
     padding-bottom: 54px;
+  }
+
+  .hero__ornament::before {
+    right: -34vw;
+    bottom: -14vh;
+    width: 108vw;
+  }
+
+  .hero__vine {
+    width: 330px;
+    opacity: 0.46;
+  }
+
+  .hero__vine--left {
+    left: -238px;
+    bottom: -26px;
+  }
+
+  .hero__vine--right {
+    right: -212px;
+    top: 132px;
+  }
+
+  .hero__glow-dot--one {
+    left: 16vw;
+    top: 24vh;
+  }
+
+  .hero__glow-dot--two {
+    left: 32vw;
+    bottom: 16vh;
+  }
+
+  .hero__glow-dot--three {
+    right: 24vw;
+    top: 31vh;
   }
 
   .hero__title {

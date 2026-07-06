@@ -37,6 +37,44 @@
   }
 }
 
+@keyframes vineDraw {
+  from {
+    stroke-dashoffset: var(--vine-length);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes vineBloom {
+  0% {
+    opacity: 0;
+    transform: scale(0.84) rotate(-2deg);
+  }
+  58% {
+    opacity: 0.64;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes goldSpark {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0) scale(0.6);
+  }
+  24%,
+  64% {
+    opacity: 0.86;
+  }
+  50% {
+    transform: translate3d(12px, -18px, 0) scale(1);
+  }
+}
+
 @keyframes correctPop {
   0% {
     transform: scale(0.92);
@@ -79,6 +117,65 @@
 
 .reveal.is-visible {
   animation: slideUp 700ms ease forwards;
+}
+
+.hero__vine-line,
+.hero__leaf {
+  --vine-length: 980;
+  stroke-dasharray: var(--vine-length);
+  stroke-dashoffset: var(--vine-length);
+  animation: vineDraw 3.8s cubic-bezier(0.2, 0.78, 0.18, 1) forwards;
+}
+
+.hero__vine-line:nth-child(2) {
+  animation-delay: 360ms;
+}
+
+.hero__vine-line:nth-child(3) {
+  animation-delay: 720ms;
+}
+
+.hero__vine-line:nth-child(4) {
+  animation-delay: 1040ms;
+}
+
+.hero__leaf {
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: 0;
+  animation: vineDraw 2.1s cubic-bezier(0.2, 0.78, 0.18, 1) forwards, vineBloom 1.4s ease forwards;
+}
+
+.hero__leaf:nth-of-type(5) {
+  animation-delay: 900ms, 900ms;
+}
+
+.hero__leaf:nth-of-type(6) {
+  animation-delay: 1250ms, 1250ms;
+}
+
+.hero__leaf:nth-of-type(7) {
+  animation-delay: 1600ms, 1600ms;
+}
+
+.hero__leaf:nth-of-type(8) {
+  animation-delay: 1950ms, 1950ms;
+}
+
+.hero__glow-dot {
+  animation: goldSpark 4.6s ease-in-out infinite;
+}
+
+.hero__glow-dot--two {
+  animation-delay: 800ms;
+}
+
+.hero__glow-dot--three {
+  animation-delay: 1500ms;
+}
+
+.hero__glow-dot--four {
+  animation-delay: 2300ms;
 }
 
 .hint,

@@ -273,6 +273,98 @@ a {
   background-size: cover;
 }
 
+.hero__ornament {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero__ornament::before {
+  content: "";
+  position: absolute;
+  right: -9vw;
+  bottom: -18vh;
+  width: min(760px, 68vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(216, 184, 106, 0.16), rgba(140, 124, 255, 0.1) 38%, transparent 68%);
+  filter: blur(5px);
+}
+
+.hero__vine {
+  position: absolute;
+  width: min(500px, 38vw);
+  height: auto;
+  overflow: visible;
+  fill: none;
+  opacity: 0.62;
+  filter: drop-shadow(0 0 12px rgba(216, 184, 106, 0.12));
+}
+
+.hero__vine--left {
+  left: max(-320px, -25vw);
+  bottom: -80px;
+}
+
+.hero__vine--right {
+  right: max(-142px, -10vw);
+  top: 76px;
+  transform: scaleX(-1) rotate(-5deg);
+}
+
+.hero__vine-line,
+.hero__leaf {
+  stroke: rgba(232, 213, 166, 0.86);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hero__vine-line {
+  stroke-width: 3.4;
+}
+
+.hero__vine-line--main {
+  stroke-width: 4.8;
+}
+
+.hero__leaf {
+  fill: rgba(216, 184, 106, 0.12);
+  stroke-width: 2.8;
+}
+
+.hero__glow-dot {
+  position: absolute;
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #f8e9bd;
+  box-shadow: 0 0 16px rgba(248, 233, 189, 0.9);
+  opacity: 0;
+}
+
+.hero__glow-dot--one {
+  left: 11vw;
+  top: 28vh;
+}
+
+.hero__glow-dot--two {
+  left: 23vw;
+  bottom: 19vh;
+}
+
+.hero__glow-dot--three {
+  right: 18vw;
+  top: 23vh;
+}
+
+.hero__glow-dot--four {
+  right: 10vw;
+  bottom: 30vh;
+}
+
 [data-theme="dark"] .hero__bg {
   background-image:
     linear-gradient(90deg, rgba(7, 7, 11, 0.95) 0%, rgba(8, 8, 13, 0.86) 46%, rgba(14, 12, 20, 0.56) 100%),
