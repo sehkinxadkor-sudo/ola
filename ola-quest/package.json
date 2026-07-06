@@ -1,7 +1,7 @@
 {
   "name": "ola-quest",
   "version": "1.0.0",
-  "description": "Premium puzzle quest website for Ola Quest.",
+  "description": "Premium puzzle quest website for Olya Quest.",
   "private": true,
   "scripts": {
     "dev": "python3 -m http.server 5173",
