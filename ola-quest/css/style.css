@@ -315,6 +315,13 @@ a {
   font-size: clamp(3rem, 6.4vw, 6.2rem);
 }
 
+.hero__heart {
+  color: #d84f5f;
+  -webkit-text-fill-color: #d84f5f;
+  text-shadow: 0 0 26px rgba(216, 79, 95, 0.38);
+  white-space: nowrap;
+}
+
 .hero__text {
   max-width: 620px;
   margin: 22px 0 30px;
