@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ola Quest - премиальный квест из 15 загадок с сертификатом.">
+    <title>Ola Quest</title>
+    <link rel="preload" as="image" href="assets/images/hero-bg.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+  </head>
+  <body>
+    <div class="preloader" data-preloader aria-label="Загрузка Ola Quest">
+      <img src="assets/images/ola-logo-cropped.png" alt="" class="preloader__logo">
+      <div class="preloader__ring" aria-hidden="true"></div>
+    </div>
+
+    <header class="site-header" data-header>
+      <a class="site-header__brand" href="#home" aria-label="Ola Quest, на главный экран">
+        <img src="assets/images/ola-logo-cropped.png" alt="Ola Quest" width="76" height="76">
+      </a>
+      <div class="site-header__note" aria-label="День рождения Оли, 2 июля">
+        <span>2 июля</span>
+        <strong>только для тебя</strong>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero section is-active" id="home" data-screen="landing">
+        <div class="hero__bg" aria-hidden="true"></div>
+        <div class="hero__content reveal">
+          <p class="hero__kicker">Ola Quest</p>
+          <h1 class="hero__title">Привет, Оля. С днём рождения.</h1>
+          <p class="hero__text">Я загадал для тебя 15 загадок. Разгадаешь их все — откроется секретный приз, который спрятан только для Оли.</p>
+          <div class="hero__actions">
+            <button class="button button--primary button--pulse" type="button" data-start-quest>Открыть подарок</button>
+            <button class="button button--ghost" type="button" data-continue-quest hidden>Продолжить</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="game section" data-screen="game" aria-labelledby="game-title" hidden>
+        <div class="game-shell">
+          <div class="game-topbar">
+            <span class="game-topbar__brand">
+              <img class="game-topbar__logo" src="assets/images/ola-logo-cropped.png" alt="Ola Quest" width="64" height="64">
+            </span>
+            <div class="progress" aria-label="Прогресс прохождения">
+              <div class="progress__track"><span class="progress__bar" data-progress-bar></span></div>
+              <span class="progress__label" data-progress-label>0%</span>
+            </div>
+            <div class="game-topbar__meta">
+              <span data-game-timer>00:00</span>
+              <span data-question-counter>Вопрос 1 из 15</span>
+              <span data-hints-counter>Подсказки: 0</span>
+            </div>
+          </div>
+
+          <article class="question-card" data-swipe-zone>
+            <div class="question-card__badge" data-question-number>01</div>
+            <h2 class="question-card__title" id="game-title">Загадка</h2>
+            <p class="question-card__text" data-question-text></p>
+
+            <div class="hint-actions">
+              <button class="button button--hint" type="button" data-hint-button="easy">💡 Лёгкая подсказка</button>
+              <button class="button button--hint" type="button" data-hint-button="hard">🔮 Сложная подсказка</button>
+            </div>
+            <div class="hints" data-hints aria-live="polite"></div>
+
+            <form class="answer-form" data-answer-form>
+              <label class="answer-form__label" for="answer">Твой ответ</label>
+              <div class="answer-form__row">
+                <input id="answer" class="answer-form__input" data-answer-input type="text" autocomplete="off" placeholder="Напиши ответ..." required>
+                <button class="button button--primary" type="submit" data-submit-answer>Проверить</button>
+              </div>
+            </form>
+
+            <div class="feedback" data-feedback role="status" aria-live="polite"></div>
+            <div class="game-bottom">
+              <span data-attempts>Попытки: 0</span>
+              <button class="link-button" type="button" data-reset>Сбросить прогресс</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="finish section" data-screen="finish" hidden>
+        <div class="finish__content">
+          <p class="finish__eyebrow">Финал</p>
+          <h2 class="finish__title">ПОЗДРАВЛЯЕМ!</h2>
+          <p class="finish__text">Ты прошла мой квест и доказала, что умеешь замечать детали, думать нестандартно и не сдаваться.</p>
+          <div class="finish-stats">
+            <div><span data-final-time>00:00</span><p>время</p></div>
+            <div><span data-final-hints>0</span><p>подсказок</p></div>
+            <div><span data-final-id>OQ-0000</span><p>ID сертификата</p></div>
+          </div>
+
+          <div class="finish-grid">
+            <section class="certificate-panel" aria-labelledby="certificate-title">
+              <div class="finish-card__header">
+                <p>Награда 1</p>
+                <h3 id="certificate-title">Сертификат квеста</h3>
+              </div>
+            <form class="certificate-form" data-certificate-form>
+              <label for="playerName">Имя для сертификата</label>
+              <div>
+                <input id="playerName" data-player-name type="text" maxlength="32" placeholder="Например, Оля" value="Оля">
+                <button class="button button--primary" type="submit">Скачать сертификат</button>
+              </div>
+              <p class="certificate-form__note" data-certificate-status aria-live="polite"></p>
+            </form>
+            <canvas class="certificate-canvas" data-certificate-canvas width="1600" height="900" aria-label="Сертификат Ola Quest"></canvas>
+            </section>
+
+            <section class="prize-panel" aria-labelledby="prize-title">
+              <div class="finish-card__header">
+                <p>Награда 2</p>
+                <h3 id="prize-title">Секретный приз</h3>
+              </div>
+              <div class="wildberries-card">
+                <span class="wildberries-card__mark">WB</span>
+                <div>
+                  <p class="wildberries-card__label">Wildberries</p>
+                  <h4>Подарок для Оли</h4>
+                  <p>Квест пройден. Теперь можно открыть настоящий приз: сюрприз на Wildberries, выбранный специально для тебя.</p>
+                  <a class="button button--wildberries" href="https://www.wildberries.ru/" target="_blank" rel="noopener">Открыть Wildberries</a>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <button class="link-button" type="button" data-play-again>Пройти ещё раз</button>
+        </div>
+      </section>
+    </main>
+
+    <audio data-sound="correct" src="assets/sounds/correct.mp3" preload="auto"></audio>
+    <audio data-sound="wrong" src="assets/sounds/wrong.mp3" preload="auto"></audio>
+    <audio data-sound="complete" src="assets/sounds/complete.mp3" preload="auto"></audio>
+
+    <script src="js/questions.js"></script>
+    <script src="js/hints.js"></script>
+    <script src="js/progress.js"></script>
+    <script src="js/certificate.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

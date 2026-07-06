@@ -1,0 +1,8 @@
+.env
+*.env
+node_modules/
+.DS_Store
+dist/
+coverage/
+
+ola-quest/backups/

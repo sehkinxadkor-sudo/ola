@@ -1,0 +1,111 @@
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(201, 169, 92, 0.28), 0 16px 36px rgba(30, 32, 37, 0.22);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(201, 169, 92, 0), 0 16px 36px rgba(30, 32, 37, 0.22);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(201, 169, 92, 0), 0 16px 36px rgba(30, 32, 37, 0.22);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes correctPop {
+  0% {
+    transform: scale(0.92);
+  }
+  65% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20%,
+  60% {
+    transform: translateX(-8px);
+  }
+  40%,
+  80% {
+    transform: translateX(8px);
+  }
+}
+
+.preloader__ring {
+  animation: spin 1s linear infinite;
+}
+
+.button--pulse {
+  animation: pulse 3.2s ease-out infinite;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+}
+
+.reveal.is-visible {
+  animation: slideUp 700ms ease forwards;
+}
+
+.hint,
+.feedback__message,
+.question-card {
+  animation: slideUp 420ms ease both;
+}
+
+.feedback__message--success {
+  animation: correctPop 420ms ease both;
+}
+
+.question-card.is-wrong {
+  animation: shake 360ms ease;
+}
+
+.finish__title {
+  animation: correctPop 780ms ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+}
