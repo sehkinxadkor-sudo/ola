@@ -969,19 +969,32 @@ a:focus-visible {
   line-height: 1;
 }
 
-.wildberries-card p:last-child {
+.wildberries-card__description {
   margin: 0;
   color: rgba(247, 240, 223, 0.82);
   font-weight: 800;
   line-height: 1.55;
 }
 
+.wildberries-card__actions {
+  display: grid;
+  gap: 12px;
+  margin-top: 22px;
+}
+
 .button--wildberries {
   width: 100%;
-  margin-top: 22px;
   background: linear-gradient(135deg, #b12cff, #7b61ff 54%, #d8b86a);
   color: #fff;
   box-shadow: 0 18px 36px rgba(123, 97, 255, 0.24);
+}
+
+.button--wildberries-secondary {
+  width: 100%;
+  border: 1px solid rgba(216, 184, 106, 0.22);
+  background: rgba(7, 7, 11, 0.34);
+  color: #fffaf0;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 [hidden] {
